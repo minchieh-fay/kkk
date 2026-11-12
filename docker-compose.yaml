@@ -1,24 +1,15 @@
+version: "2.4"
+
 services:
   kkk:
-    build: .
+    image: alpine:3.22
+    platform: linux/amd64
+    working_dir: /app
+    command: ["/app/kkk-linux-amd64"]
     init: true
     restart: unless-stopped
     volumes:
-      - type: bind
-        source: ./config.json
-        target: /app/config.json
-        read_only: true
-        bind:
-          create_host_path: false
-      - type: bind
-        source: /root/key
-        target: /root/key
-        read_only: true
-        bind:
-          create_host_path: false
-      - type: bind
-        source: /root/dingkey
-        target: /root/dingkey
-        read_only: true
-        bind:
-          create_host_path: false
+      - ./kkk-linux-amd64:/app/kkk-linux-amd64:ro
+      - ./config.json:/app/config.json:ro
+      - /root/key:/root/key:ro
+      - /root/dingkey:/root/dingkey:ro

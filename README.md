@@ -4,9 +4,13 @@
 
 ```sh
 cp config.sample.json config.json
-docker compose up -d --build
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -o kkk-linux-amd64 main.go help.go config.go
+docker compose up -d
 docker compose logs -f kkk
 ```
+
+Compose 直接挂载 `kkk-linux-amd64` 执行。部署时将二进制、`config.json` 和
+`docker-compose.yaml` 放在同一目录；仅上传文件不会自动启动、停止或重启容器。
 
 若服务器仍有旧 `run.sh` 创建的 `kkk` 容器，先执行 `docker stop kkk`，避免新旧策略同时交易。
 
