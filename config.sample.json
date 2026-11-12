@@ -1,0 +1,15 @@
+{
+  "keyfile": "/root/key",
+  "history_hours": 10,
+  "low_threshold": 0.5,
+  "high_threshold": 2.0,
+  "notify_cooldown_hours": 10,
+  "check_interval_minutes": 1,
+  "trade_amount_usdt": 12,
+  "quiet_hour_start": 23,
+  "quiet_hour_end": 7,
+  "enable_tp_sl": true,
+  "stop_loss_pct": 0.1,
+  "take_profit_pct": 0.3,
+  "ding_keyfile": "/root/dingkey"
+}

@@ -27,7 +27,19 @@ go.work.sum
 
 # env file
 .env
+.env.*
+tmp
+[0-9].md
 
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Local deployment configuration and credentials
+config.json
+key
+dingkey
+*.pem
+*.key
+kkk
+kkk-linux-*

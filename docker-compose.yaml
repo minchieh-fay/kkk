@@ -1,0 +1,24 @@
+services:
+  kkk:
+    build: .
+    init: true
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./config.json
+        target: /app/config.json
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /root/key
+        target: /root/key
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /root/dingkey
+        target: /root/dingkey
+        read_only: true
+        bind:
+          create_host_path: false

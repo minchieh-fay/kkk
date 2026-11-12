@@ -1,0 +1,7 @@
+.git
+.env
+config.json
+*key*
+tmp
+tests
+test*.go
